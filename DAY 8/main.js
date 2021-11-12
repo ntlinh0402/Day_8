@@ -10,11 +10,10 @@ let bet = document.creatElement("betCoin")
 //submit
 let submit=document. creatElement("submit")
 submit.addEventListener('click', function(){
-    let predictGoalDifference = predictVIETNAM.value - predictJAPAN.value
     totalCoin -= bet.value
     let realVIETNAM=Math.floor(Math.random()*4)
     let realJAPAN=Math.floor(Math.random()*4)
-    let goalDifference = realVIETNAM-realJAPAN
+   
     document.creatElement("predictResult").innerHTML = (`Your predict result `)
     document.creatElement("realResult").innerHTML = (`Final result: Vietnam ${realVIETNAM}`)
 
@@ -24,9 +23,7 @@ submit.addEventListener('click', function(){
     if(predictVIETNAM.value==realVIETNAM && predictJAPAN==realJAPAN){
     earnCoin*=2
     }
-    else if(predictGoalDifference == goalDifference){
-        earnCoin*=1.2
-    }
+   
     else earnCoin=0
     totalCoin+=earnCoin
     if(totalCoin<=0){
